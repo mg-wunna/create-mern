@@ -2,7 +2,7 @@
 
   ✔ create node package & connect with mongo database @started(22-07-01 22:04) @done(22-07-01 22:12) @lasted(8m49s)
   ✔ create express server and middleware & listen server at the port @started(22-07-01 22:13) @done(22-07-01 22:14) @lasted(1m57s)
-  ☐ create custom console function & add in console object
+  ✔ create custom console function & add in console object @started(22-07-01 22:15) @done(22-07-01 22:38) @lasted(23m15s)
   ☐ create server status model & api
   ☐ create system api for update or refresh server
   ☐ create express static rendering routes

@@ -1,4 +1,5 @@
 import {} from 'dotenv/config';
+import {} from './configs/custom-console.config.js';
 import mongoose from 'mongoose';
 import express from 'express';
 import cors from 'cors';
@@ -8,7 +9,7 @@ const { MONGO_URL, PORT } = process.env;
 mongoose
   .connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(_ => {
-    console.log('Mongo database connected.');
+    console.Success('Mongo database connected.');
 
     // ✔ create express server and middleware
     const server = express();
@@ -17,9 +18,8 @@ mongoose
     server.use(cors());
 
     // ✔ listen server at the port
-    server.listen(PORT, console.log(`Server is listening at the port ${PORT}!`));
+    server.listen(PORT, console.Success(`Server is listening at the port ${PORT}!`));
   })
   .catch(error => {
-    console.log('Mongo database connection error.');
-    console.log(error.message);
+    console.Error('Mongo database connection unknown error.', error.message, 'Report to admin.');
   });
