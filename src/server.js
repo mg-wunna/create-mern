@@ -38,7 +38,7 @@ mongoose
       process.env.NODE_ENV = 'production';
     });
 
-    console.log('Testing again');
+    console.log('Hello Wunna');
   })
   .catch(error => {
     console.Error('Mongo database connection unknown error.', error.message, 'Report to admin.');
