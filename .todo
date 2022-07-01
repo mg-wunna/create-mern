@@ -1,0 +1,9 @@
+=== CREATE MERN SERVER === :
+
+  ✔ create node package & connect with mongo database @started(22-07-01 22:04) @done(22-07-01 22:12) @lasted(8m49s)
+  ☐ create express server and middleware & listen server at the port
+  ☐ create custom console function & add in console object
+  ☐ create server status model & api
+  ☐ create system api for update or refresh server
+  ☐ create express static rendering routes
+  ☐ connect with github and push to online & relese version 1.0.0

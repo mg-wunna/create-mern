@@ -1,0 +1,26 @@
+{
+  "name": "create-mern-server",
+  "description": "Create MERN Server Boiler Plate.",
+  "author": "Mg Wunna",
+  "license": "MIT",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "nodemon -q -x \"cls && node src/server.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mg-wunna/create-mern.git"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "mongoose": "^6.4.1"
+  },
+  "devDependencies": {
+    "node": "^16.15.1",
+    "nodemon": "^2.0.18",
+    "npm": "^8.13.2"
+  }
+}
