@@ -18,7 +18,7 @@ serverStatusesRouter.get('/', async (req, res) => {
     if (!serverStatuses) return console.Error('Read all server statuses api error.', 'Page limit reach.', 'Change page to lower and try again.');
     return console.Success('Read all server statuses api success.', serverStatuses, res, 200);
   } catch (error) {
-    return console.Fail('Read all server statuses api unknown error.', error.message, 'Report to admin.');
+    return console.Fail('Read all server statuses api unknown error.', error.message, 'Report to admin.', res);
   }
 });
 
@@ -29,7 +29,7 @@ serverStatusesRouter.delete('/', async (req, res) => {
     await serverStatusesModel.deleteMany();
     return console.Success('Delete all server statuses api success.', undefined, res, 200);
   } catch (error) {
-    return console.Fail('Delete all server statuses api unknown error.', error.message, 'Report to admin.');
+    return console.Fail('Delete all server statuses api unknown error.', error.message, 'Report to admin.', res);
   }
 });
 
@@ -45,7 +45,7 @@ serverStatusesRouter.delete('/:id', async (req, res) => {
     if (!result) return console.Error('Delete server statuses by id api error.', 'Data not found by id.', 'Try again with right id.', res, 404);
     return console.Success('Delete server statuses by id api success.', undefined, res);
   } catch (error) {
-    return console.Fail('Delete server statuses by id api unknown error.', error.message, 'Report to admin.');
+    return console.Fail('Delete server statuses by id api unknown error.', error.message, 'Report to admin.', res);
   }
 });
 

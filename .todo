@@ -4,6 +4,6 @@
   ✔ create express server and middleware & listen server at the port @started(22-07-01 22:13) @done(22-07-01 22:14) @lasted(1m57s)
   ✔ create custom console function & add in console object @started(22-07-01 22:15) @done(22-07-01 22:38) @lasted(23m15s)
   ✔ create server status api @started(22-07-01 22:39) @done(22-07-01 23:21) @lasted(42m7s)
-  ☐ create system api for update or refresh server
+  ✔ create system api for update or refresh server @started(22-07-01 23:21) @done(22-07-01 23:31) @lasted(10m33s)
   ☐ create express static rendering routes
   ☐ connect with github and push to online & relese version 1.0.0

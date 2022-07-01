@@ -5,6 +5,7 @@ import express from 'express';
 import cors from 'cors';
 
 import serverStatusesRouter from './routers/server-stauses.router.js';
+import systemsRouter from './routers/systems.router.js';
 
 // ✔ connect with mongo database
 const { MONGO_URL, PORT } = process.env;
@@ -21,6 +22,7 @@ mongoose
 
     // ✔ connect with router that do not need authorization
     server.use('/api/server-statuses', serverStatusesRouter);
+    server.use('/api/systems', systemsRouter);
 
     // ✔ listen server at the port
     server.listen(PORT, console.Success(`Server is listening at the port ${PORT}!`));
