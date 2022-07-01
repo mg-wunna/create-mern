@@ -2,5 +2,5 @@
 
   ✔ create react application @started(22-07-01 21:46) @done(22-07-01 21:51) @lasted(5m58s)
   ✔ connect with tailwind css @started(22-07-01 21:52) @done(22-07-01 21:54) @lasted(2m19s)
-  ☐ create react routes
+  ✔ create react routes @started(22-07-01 21:54) @done(22-07-01 21:58) @lasted(4m18s)
   ☐ connect with github and push to online
