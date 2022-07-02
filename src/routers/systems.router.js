@@ -18,11 +18,8 @@ systemsRouter.post('/', async (req, res) => {
 
     // ✔ run update system bash and handle error
     cmd.run('bash src/configs/update-system.sh', (error, data, detail) => {
-      if (error) {
-        console.Fail('Update system api error.', detail.trim(), 'Report to admin with error detail.', res);
-      } else {
-        console.Success('Update system api success.', undefined, res);
-      }
+      if (error) return console.Fail('Update system api error.', detail.trim(), 'Report to admin with error detail.', res);
+      console.Success('Update system api success.', undefined, res);
 
       // ✔ refresh system in 3 seconds
       setTimeout(() => {

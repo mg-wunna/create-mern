@@ -1,3 +1,5 @@
+console.clear();
+console.log('Starting Server....');
 import {} from 'dotenv/config';
 import {} from './configs/custom-console.config.js';
 import mongoose from 'mongoose';
@@ -34,10 +36,6 @@ mongoose
 
     // ✔ listen server at the port
     server.listen(PORT, console.Success(`Server is listening at the port ${PORT}!`));
-
-    console.log('Hello Wunna');
-    console.log('Hi Wunna');
-    console.log('Testing Again');
   })
   .catch(error => {
     console.Error('Mongo database connection unknown error.', error.message, 'Report to admin.');
