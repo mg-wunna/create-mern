@@ -1,3 +1,5 @@
+console.clear();
+console.log('Starting Server....');
 import {} from 'dotenv/config';
 import {} from './configs/custom-console.config.js';
 import mongoose from 'mongoose';
@@ -14,6 +16,7 @@ const { MONGO_URL, PORT } = process.env;
 mongoose
   .connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(_ => {
+    process.env.DATABASE = 'available';
     console.Success('Mongo database connected.');
 
     // ✔ create express server and middleware
@@ -36,5 +39,10 @@ mongoose
     server.listen(PORT, console.Success(`Server is listening at the port ${PORT}!`));
   })
   .catch(error => {
-    console.Error('Mongo database connection unknown error.', error.message, 'Report to admin.');
+    process.env.DATABASE = 'unavailable';
+
+    // ✔ create express server with error and listen server at the port
+    const server = express();
+    server.get('/', (req, res) => console.Fail('Mongo database connection unknown error.', error.message, 'Report to admin.', res));
+    server.listen(PORT, console.Success(`Error server is listening at the port ${PORT}!`));
   });

@@ -1,12 +1,12 @@
 ORIGIN_URL=`git config --get remote.origin.url`
 
-if [ "$ORIGIN_URL" != "$GITHUB_URL" ]; then
+if [ "$ORIGIN_URL" != "$GITHUB_URL_ADDRESS" ]; then
   if [ -z "$(git remote | grep origin)" ]; then
     # create new remote origin
-    git remote add origin $GITHUB_URL
+    git remote add origin $GITHUB_URL_ADDRESS
   else
     # change existing remote origin
-    git remote set-url origin $GITHUB_URL
+    git remote set-url origin $GITHUB_URL_ADDRESS
   fi
 fi
 

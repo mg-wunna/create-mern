@@ -1,20 +1,16 @@
 import serverStatusesModel from '../models/server-statuses.model.js';
 
-const { NODE_ENV } = process.env;
-
 // ✔ create custom console function
 const customConsole = (type, message, detail, solution, data, res, status) => {
   // ✔ show success or error log in console when development state
-  if (NODE_ENV === 'development') {
-    if (type === 'success') console.log(`✔ ${message}`);
-    else console.log(`X ${message}\n! ${typeof detail === 'object' ? JSON.stringify(detail) : `${detail.charAt(0).toUpperCase()}${detail.slice(1)}`} \n? ${solution}`);
-  }
+  if (type === 'success') console.log(`✔ ${message}`);
+  else console.log(`X ${message}\n! ${typeof detail === 'object' ? JSON.stringify(detail) : `${detail.charAt(0).toUpperCase()}${detail.slice(1)}`} \n? ${solution}`);
 
   // ✔ create server status data
   let serverStatus = new serverStatusesModel({ meta: { status: type, statusCode: status }, message, detail, solution });
 
   // ✔ save server status in mongo database
-  serverStatus.save().catch(error => console.log(error.message));
+  if (process.env.DATABASE === 'available') serverStatus.save().catch(error => console.log(error.message));
 
   // ✔ response data for api
   serverStatus = JSON.parse(JSON.stringify(serverStatus));
