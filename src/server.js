@@ -36,7 +36,6 @@ mongoose
     server.listen(PORT, console.Success(`Server is listening at the port ${PORT}!`));
 
     console.log('Hello Wunna');
-    console.log('Testing Server');
   })
   .catch(error => {
     console.Error('Mongo database connection unknown error.', error.message, 'Report to admin.');
