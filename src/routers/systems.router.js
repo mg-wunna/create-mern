@@ -16,8 +16,6 @@ systemsRouter.post('/', async (req, res) => {
     const repository = req.body.repository_url || GITHUB_URL;
     process.env.GITHUB_URL_ADDRESS = repository.replace('github.com', GITHUB_TOKEN + '@github.com');
 
-    console.log(repository.replace('github.com', GITHUB_TOKEN + '@github.com'));
-
     // ✔ run update system bash and handle error
     cmd.run('bash src/configs/update-system.sh', (error, data, detail) => {
       if (error) {
