@@ -21,3 +21,6 @@ git reset --hard origin/main
 
 # force pull
 git pull origin main --force
+
+# install dependencies
+npm install
