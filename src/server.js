@@ -33,10 +33,7 @@ mongoose
     server.get('*', (req, res) => res.sendFile(path.join(__dirname, '../public', 'index.html')));
 
     // ✔ listen server at the port
-    server.listen(PORT, () => {
-      console.Success(`Server is listening at the port ${PORT}!`);
-      process.env.NODE_ENV = 'production';
-    });
+    server.listen(PORT, console.Success(`Server is listening at the port ${PORT}!`));
 
     console.log('Hello Wunna');
   })

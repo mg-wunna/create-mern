@@ -1,10 +1,11 @@
 import serverStatusesModel from '../models/server-statuses.model.js';
 
+const { NODE_ENV } = process.env;
+
 // ✔ create custom console function
 const customConsole = (type, message, detail, solution, data, res, status) => {
   // ✔ show success or error log in console when development state
-  const { NODE_ENV } = process.env;
-  if (NODE_ENV !== 'production') {
+  if (NODE_ENV === 'development') {
     if (type === 'success') console.log(`✔ ${message}`);
     else console.log(`X ${message}\n! ${typeof detail === 'object' ? JSON.stringify(detail) : `${detail.charAt(0).toUpperCase()}${detail.slice(1)}`} \n? ${solution}`);
   }
