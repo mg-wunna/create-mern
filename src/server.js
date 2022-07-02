@@ -40,6 +40,7 @@ mongoose
     console.log('Testing Server Auto Update Without Install');
     console.log('Testing Server Auto Update Without Install');
     console.log('Hello World');
+    console.log('Hi Wunna');
   })
   .catch(error => {
     console.Error('Mongo database connection unknown error.', error.message, 'Report to admin.');
