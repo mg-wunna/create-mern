@@ -36,10 +36,6 @@ mongoose
     server.listen(PORT, console.Success(`Server is listening at the port ${PORT}!`));
 
     console.log('Hello Wunna');
-    console.log('Testing Server Auto Update Without Install');
-    console.log('Testing Server Auto Update Without Install');
-    console.log('Testing Server Auto Update Without Install');
-    console.log('Hello World');
     console.log('Hi Wunna');
   })
   .catch(error => {
